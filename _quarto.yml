@@ -26,3 +26,6 @@ format:
     toc: true
     code-fold: true
     code-copy: true
+    include-in-header:
+      text: |
+        <meta name="robots" content="noindex, nofollow">
