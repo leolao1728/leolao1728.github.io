@@ -7,17 +7,12 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: about.qmd
-        text: About
       - href: projects.qmd
         text: Projects
       - href: notes.qmd
         text: Mathematical Notes
       - href: dashboard.qmd
         text: Dashboard
-    right:
-      - icon: github
-        href: https://github.com/leolao1728
 
 format:
   html:

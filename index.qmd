@@ -4,28 +4,70 @@ subtitle: "Mathematics, Python and Data Analysis"
 page-layout: full
 ---
 
-## Welcome
+## Greeting
 
-Hello! I am Yiqian Liu.
+❤Hi Lynn❤. Welcome to my personal website. I am really glad that I have you as my first visitor.
 
-This website presents my projects in mathematics, Python,
-quantitative analysis and data visualization.
 
-## Research Interests
+## Profile
 
+I am interested in mathematics, quantitative analysis, data science
+and Python programming.
+
+I enjoy translating mathematical ideas into practical computational
+solutions, with a particular interest in optimization, statistical
+modelling and data visualization.
+
+This website presents selected projects, mathematical notes and
+interactive analytical work.
+
+## Education
+
+### University Name
+
+**Degree and Subject**  
+Expected graduation: Year
+
+Relevant coursework:
+
+- Probability and Statistics
+- Linear Algebra
+- Mathematical Analysis
+- Optimization
+- Time Series Analysis
+
+## Technical Skills
+
+- **Programming:** Python
+- **Data Analysis:** Pandas, NumPy
+- **Data Visualization:** Matplotlib, Plotly
+- **Mathematics:** Probability, Statistics, Optimization, Linear Algebra
+- **Technical Tools:** Jupyter Notebook, Git, GitHub, Quarto, LaTeX
+
+## Areas of Interest
+
+- Quantitative analysis
 - Mathematical modelling
-- Quantitative finance
-- Data analysis
+- Portfolio optimization
+- Probability and statistics
 - Machine learning
-- Python development
+- Data visualization
 
 ## Featured Projects
 
-### Portfolio Optimization
+### Modern Portfolio Theory
 
 Implementation of mean-variance portfolio optimization using Python.
 
-[View Portfolio Optimization Project](projects/portfolio-optimization.qmd)
+The project includes:
+
+- Mathematical formulation of portfolio risk and return
+- Covariance-matrix analysis
+- Python implementation
+- Interpretation of model results
+- Discussion of model limitations
+
+[View this project →](projects/portfolio-optimization.qmd)
 
 ### Option Pricing
 
@@ -33,6 +75,16 @@ A mathematical and computational study of option-pricing models.
 
 *Project coming soon.*
 
-## Contact
+## Mathematical Notes
 
-- GitHub: <https://github.com/leolao1728>
+Selected mathematical derivations and explanatory notes are available
+in the Mathematical Notes section.
+
+[View mathematical notes →](notes.qmd)
+
+## Dashboards
+
+Interactive analytical dashboards and data visualizations will be
+presented in the Dashboard section.
+
+[View dashboards →](dashboard.qmd)
