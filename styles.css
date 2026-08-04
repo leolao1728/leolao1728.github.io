@@ -23,3 +23,19 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+/* Homepage title */
+.quarto-title-block .title {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+/* Homepage second-level headings */
+.homepage h2 {
+  color: #3f7599;
+  font-weight: 700;
+  border-bottom: 2px solid #dbeafe;
+  padding-bottom: 0.4rem;
+  margin-top: 2.5rem;
+}

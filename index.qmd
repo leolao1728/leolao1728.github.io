@@ -1,59 +1,47 @@
 ---
 title: "Yiqian Liu"
-subtitle: "Mathematics, Python and Data Analysis"
+subtitle: "Quantitative Finance | Data Analysis | Risk Management"
 page-layout: full
+body-classes: homepage
 ---
 
-## Greeting
+## About Me
+Quantitative Finance and Risk Management Science student at CUHK with interests in mathematics, programming and financial markets.
 
-❤Hi Lynn❤. Welcome to my personal website. I am really glad that I have you as my first visitor.
+**This website presents selected projects, technical notes and quantitative analyses developed throughout my academic studies.**
 
-
-## Profile
-
-I am interested in mathematics, quantitative analysis, data science
-and Python programming.
-
-I enjoy translating mathematical ideas into practical computational
-solutions, with a particular interest in optimization, statistical
-modelling and data visualization.
-
-This website presents selected projects, mathematical notes and
-interactive analytical work.
+[Explore Projects](projects.qmd){.btn .btn-primary}
 
 ## Education
 
-### University Name
+### The Chinese University of Hong Kong (CUHK), Hong Kong
+**B.Sc in Quantitative Finance and Risk Management Science:** *September 2023 - Expected June 2027*  
 
-**Degree and Subject**  
-Expected graduation: Year
+Coursework:
 
-Relevant coursework:
+- **Probability and Statistics:** Distributions and statistical inference
+- **Stochastic Processes:** Markov chains and Poisson processes
+- **Options and Futures:** Derivative strategies and greeks
+- **Time Series Analysis:** ARIMA and GARCH
+- **Financial Data Analytics:** Value at Risk, Principal Component Analysis, and Random Forests
+- **Statistical Modelling in Financial Markets:**
+    - Modern Portfolio Theory and CAPM
+    - Multi-factors model
+    - Browneian motion and Black-Scholes-Merton Option Pricing Model
+    - Ito's Lemma and stochastic calculus
+- **Quantitative Methods for Financial Derivatives:** Local volatility, Gatheral mapping and volatility surface modeling
 
-- Probability and Statistics
-- Linear Algebra
-- Mathematical Analysis
-- Optimization
-- Time Series Analysis
+------
 
-## Technical Skills
+### The University of Bristol, United Kingdom
+**Academic Exchange:** *January - June, 2026*
 
-- **Programming:** Python
-- **Data Analysis:** Pandas, NumPy
-- **Data Visualization:** Matplotlib, Plotly
-- **Mathematics:** Probability, Statistics, Optimization, Linear Algebra
-- **Technical Tools:** Jupyter Notebook, Git, GitHub, Quarto, LaTeX
+Coursework:
 
-## Areas of Interest
+- **Bayesian modelling:** Hierarchical models and MCMC methods
+- **Financial Statement Analysis:** Equity valuation models and credit risk assessment
 
-- Quantitative analysis
-- Mathematical modelling
-- Portfolio optimization
-- Probability and statistics
-- Machine learning
-- Data visualization
-
-## Featured Projects
+## Featured Projects {#featured-projects}
 
 ### Modern Portfolio Theory
 
