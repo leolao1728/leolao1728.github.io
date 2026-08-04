@@ -1,0 +1,12 @@
+---
+title: "Dashboards"
+---
+
+This section presents interactive visualizations associated with my projects.
+
+## Portfolio Analytics Dashboard
+
+The dashboard displays portfolio performance, risk metrics
+and asset-allocation results.
+
+Dashboard coming soon.

@@ -1,0 +1,38 @@
+---
+title: "Yiqian Liu"
+subtitle: "Mathematics, Python and Data Analysis"
+page-layout: full
+---
+
+## Welcome
+
+Hello! I am Yiqian Liu.
+
+This website presents my projects in mathematics, Python,
+quantitative analysis and data visualization.
+
+## Research Interests
+
+- Mathematical modelling
+- Quantitative finance
+- Data analysis
+- Machine learning
+- Python development
+
+## Featured Projects
+
+### Portfolio Optimization
+
+Implementation of mean-variance portfolio optimization using Python.
+
+[View Portfolio Optimization Project](projects/portfolio-optimization.qmd)
+
+### Option Pricing
+
+A mathematical and computational study of option-pricing models.
+
+*Project coming soon.*
+
+## Contact
+
+- GitHub: <https://github.com/leolao1728>

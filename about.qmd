@@ -1,0 +1,37 @@
+---
+title: "About Me"
+---
+
+## Profile
+
+Write a short professional introduction here.
+
+For example:
+
+I am interested in mathematics, Python programming,
+quantitative finance and data analysis.
+
+## Education
+
+### University Name
+
+Degree and subject, expected graduation year.
+
+## Technical Skills
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Plotly
+- Jupyter Notebook
+- Git
+- LaTeX
+
+## Areas of Interest
+
+- Mathematical modelling
+- Optimization
+- Probability and statistics
+- Quantitative research
+- Machine learning

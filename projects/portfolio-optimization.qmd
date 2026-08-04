@@ -1,0 +1,113 @@
+---
+title: "Portfolio Optimization"
+description: "Mean-variance portfolio optimization implemented in Python."
+date: 2026-08-04
+categories:
+  - Python
+  - Optimization
+  - Quantitative Finance
+---
+
+## Overview
+
+This project examines the mean-variance portfolio optimization problem.
+
+The objective is to identify portfolio weights that provide an appropriate
+balance between expected return and risk.
+
+## Mathematical Formulation
+
+Let
+
+$$
+w =
+\begin{bmatrix}
+w_1 \\
+w_2 \\
+\vdots \\
+w_n
+\end{bmatrix}
+$$
+
+represent the vector of portfolio weights.
+
+The expected portfolio return is
+
+$$
+\mathbb{E}[R_p] = w^\top \mu,
+$$
+
+where $\mu$ is the vector of expected asset returns.
+
+Portfolio variance is
+
+$$
+\sigma_p^2 = w^\top \Sigma w,
+$$
+
+where $\Sigma$ is the covariance matrix.
+
+A minimum-variance portfolio can be obtained by solving
+
+$$
+\begin{aligned}
+\min_w \quad & w^\top \Sigma w \\
+\text{subject to} \quad
+& \mathbf{1}^\top w = 1.
+\end{aligned}
+$$
+
+## Python Implementation
+
+```{python}
+#| echo: true
+#| warning: false
+
+import numpy as np
+import pandas as pd
+
+expected_returns = np.array([0.08, 0.10, 0.12])
+
+covariance_matrix = np.array([
+    [0.040, 0.006, 0.008],
+    [0.006, 0.090, 0.010],
+    [0.008, 0.010, 0.160]
+])
+
+weights = np.array([0.50, 0.30, 0.20])
+
+portfolio_return = weights @ expected_returns
+portfolio_variance = weights @ covariance_matrix @ weights
+portfolio_volatility = np.sqrt(portfolio_variance)
+
+results = pd.DataFrame({
+    "Metric": [
+        "Expected return",
+        "Variance",
+        "Volatility"
+    ],
+    "Value": [
+        portfolio_return,
+        portfolio_variance,
+        portfolio_volatility
+    ]
+})
+
+results
+```
+
+## Interpretation
+
+The model combines expected returns, asset variances and correlations
+to estimate the risk-return characteristics of a portfolio.
+
+## Limitations
+
+- Expected returns are difficult to estimate.
+- The covariance matrix may change over time.
+- Transaction costs are not included.
+- The model assumes that variance is an appropriate measure of risk.
+
+## Repository
+
+The complete source code will be available on GitHub.

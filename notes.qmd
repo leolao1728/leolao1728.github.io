@@ -1,0 +1,15 @@
+---
+title: "Mathematical Notes"
+---
+
+This section contains selected mathematical derivations and study notes.
+
+## Topics
+
+- Linear algebra
+- Probability theory
+- Optimization
+- Stochastic processes
+- Mathematical finance
+
+More notes will be added over time.
