@@ -167,35 +167,7 @@ $$\frac{\partial C}{\partial r} = K (T-t) e^{-r(T-t)} N(d_2) \geq 0$$
 
 ## Python Implementation
 
-```{python}
-#| echo: true
-#| warning: false
-
-import numpy as np
-from scipy.stats import norm
-
-def black_scholes_call(S, K, T, r, sigma):
-    d1 = (
-        np.log(S / K) +
-        (r + 0.5 * sigma**2) * T
-    ) / (sigma * np.sqrt(T))
-
-    d2 = d1 - sigma * np.sqrt(T)
-    return (
-        S * norm.cdf(d1) -
-        K * np.exp(-r * T) * norm.cdf(d2)
-    )
-
-price = black_scholes_call(
-    S=100,
-    K=100,
-    T=1,
-    r=0.05,
-    sigma=0.2
-)
-
-price
-```
+to be continued...
 
 ## Results
 
