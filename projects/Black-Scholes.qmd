@@ -1,0 +1,214 @@
+---
+title: "Black–Scholes-Merton Option Pricing"
+description: "Mathematical derivation and Python implementation of the Black–Scholes-Merton model."
+date: 2026-08-16
+categories:
+  - Python
+  - Quantitative Finance
+  - Option Pricing
+---
+
+## Overview
+
+This project aims to derive the Black–Scholes formula for pricing European call options and implement it in Python.
+
+## Research Question
+
+How can the theoretical value of a European call option be calculated
+using the Black–Scholes framework?
+
+## Mathematical Model
+
+In the setting of Black–Scholes-Merton Model, the price of a stock $S_t$ follows
+
+$$
+\frac{dS_t}{S_t} = \mu dt + \sigma dW_t
+$$
+
+Under the risk-neutral measure, $\mu = r$ and
+
+$$
+C=e^{-rT}\mathbb{E}_{\mathbb{Q}}[(S_T-K)^+]
+$$
+
+<details>
+<summary><strong>Click to see derivation of the distribution of $S_T$</strong></summary>
+
+Using Ito's lemma on $f(S_t)=\ln S_t$,
+
+$$
+df=\frac1{S_t}dS_t-\frac12\frac1{S_t^2}(dS_t)^2 =\frac1{S_t}dS_t-\frac12\frac1{S_t^2}S_t^2 \sigma^2 dt  = \frac1{S_t}dS_t-\frac12\sigma^2dt
+$$
+
+Integrating from $0$ to $T$,
+
+$$
+\ln(S_T)-\ln(S_0)+\frac12\sigma^2T=rT+\sigma W_T
+$$
+
+Hence,
+
+$$
+S_T=S_0\exp\left((r-\frac12\sigma^2)T+\sigma W_T\right).
+$$
+
+Since $W_T=\sqrt{T}Z$ with $Z\sim N(0,1)$,
+
+$$
+S_T=S_0\exp\left((r-\frac12\sigma^2)T+\sigma\sqrt{T}Z\right).
+$$
+
+</details>
+
+<details>
+<summary><strong>Click to see Black-Scholes pricing derivation</strong></summary>
+
+Starting from
+
+$$
+C=e^{-rT}\int_{-\infty}^{\infty}\max(S_T-K,0)\phi(z)\,dz
+$$
+
+For $S_T>K$,
+
+$$
+S_0\exp\left((r-\frac12\sigma^2)T+\sigma\sqrt{T}Z\right) > K \Rightarrow Z > - \frac{\ln{(S_0/K)} + (r-\frac12\sigma^2)T}{\sigma\sqrt{T}} := -d_2
+$$
+
+Therefore,
+
+$$
+C=e^{-rT}\int_{-d_2}^{\infty}(S_T-K)\phi(z)\,dz = \int_{-d_2}^{\infty} e^{-rT} S_T \phi(z)dz -\int_{-d_2}^{\infty}K e^{-rT} \phi(z)\,dz
+$$
+
+After completing the square,
+
+$$
+\int_{-d_2}^{\infty}
+S_0e^{\frac12\sigma^2T+\sigma\sqrt{T}z}
+\phi(z)\,dz
+=
+S_0N(d_1).
+$$
+
+Also,
+
+$$
+\int_{-d_2}^{\infty}
+Ke^{-rT}\phi(z)\,dz
+=
+Ke^{-rT}N(d_2).
+$$
+
+Hence,
+
+$$
+C=S_0N(d_1)-Ke^{-rT}N(d_2).
+$$
+
+</details>
+
+### Final Result
+
+$$
+\boxed{
+C=S_0N(d_1)-Ke^{-rT}N(d_2)
+}
+$$
+where
+
+- 
+$$
+d_1 =
+\frac{
+\ln(S_0/K)+(r+\frac{1}{2}\sigma^2)T
+}{
+\sigma\sqrt{T}
+},
+$$
+
+- 
+$$
+d_2=d_1-\sigma\sqrt{T}.
+$$
+
+By Put-Call parity $C+K e^{-rT} = P + S_0$, the price of a European put option is $P = C+K e^{-rT} - S_0$
+
+$$
+\boxed{
+P=Ke^{-rT}N(-d_2)-S_0N(-d_1)
+}
+$$
+
+## Greeks
+According to the Black-Scholes model, the value of a European call option at time \(t\) is
+
+$$
+C(S,t) = S N(d_1) - K e^{-r(T-t)} N(d_2)
+$$
+
+where $d_1 =\frac{\ln(S_0/K)+(r+\frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}},$ and $d_2=d_1-\sigma\sqrt{T-t}.$
+
+
+### Delta: 
+$$\frac{\partial C}{\partial S} = N(d_1) \geq 0 ,\, \frac{\partial P}{\partial S} = N(d_1)-1 \leq 0$$
+
+### Gamma: 
+$$\frac{\partial^2 C}{\partial S^2} = \frac{\partial^2 P}{\partial S^2} =  \frac{N'(d_1)}{S \sigma \sqrt{T-t}} \geq 0$$
+
+### Vega: 
+$$\frac{\partial C}{\partial \sigma} = S N'(d_1) \sqrt{T-t} \geq 0$$
+
+### Theta: 
+$$\frac{\partial C}{\partial t} = -\frac{S N'(d_1) \sigma}{2 \sqrt{T-t}} - r K e^{-r(T-t)} N(d_2) \leq 0$$
+
+### Rho: 
+$$\frac{\partial C}{\partial r} = K (T-t) e^{-r(T-t)} N(d_2) \geq 0$$
+
+## Python Implementation
+
+```{python}
+#| echo: true
+#| warning: false
+
+import numpy as np
+from scipy.stats import norm
+
+def black_scholes_call(S, K, T, r, sigma):
+    d1 = (
+        np.log(S / K) +
+        (r + 0.5 * sigma**2) * T
+    ) / (sigma * np.sqrt(T))
+
+    d2 = d1 - sigma * np.sqrt(T)
+    return (
+        S * norm.cdf(d1) -
+        K * np.exp(-r * T) * norm.cdf(d2)
+    )
+
+price = black_scholes_call(
+    S=100,
+    K=100,
+    T=1,
+    r=0.05,
+    sigma=0.2
+)
+
+price
+```
+
+## Results
+
+The mo**l produces a theoretical option v**ue based on the current
+asset pri**, strike price, time to maturity,**nterest rate and volatility.
+
+## **mitations
+
+- The model assumes co**tant volatility.
+- The model assu**s a constant risk-free interest r**e.
+- Transaction costs are exclud**.
+- The underlying asset price is**ssumed to follow geometric Browni** motion.
+
+## Repository
+
+The comp**te implementation will be availab** on GitHub.
