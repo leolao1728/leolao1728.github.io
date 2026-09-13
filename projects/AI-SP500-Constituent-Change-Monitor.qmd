@@ -1,0 +1,12 @@
+---
+title: "AI-Powered S&P 500 Constituent Change Monitor"
+description: "An AI-driven cloud pipeline that automatically monitors index announcements, extracts S&P 500 constituent changes, and stores structured records for downstream analysis."
+date: 2026-09-14
+categories:
+  - AI Agentic Workflow
+  - Data Automation
+---
+
+## Project Report
+
+[View the project report](AI-SP500-Constituent-Change-Monitor.pdf){.btn .btn-outline-primary}

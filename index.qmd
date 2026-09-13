@@ -1,14 +1,14 @@
 ---
 title: "Yiqian Liu"
-subtitle: "Quantitative Finance | Data Analysis | Risk Management"
+subtitle: "Quantitative Finance | Data Analysis | Risk Management | AI Applications"
 page-layout: full
 body-classes: homepage
 ---
 
 ## About Me
-Quantitative Finance and Risk Management Science student at CUHK with interests in mathematics, programming and financial markets.
+Quantitative Finance and Risk Management Science student at CUHK with interests in mathematics, AI and financial markets.
 
-**This website presents selected projects, technical notes and quantitative analyses developed throughout my academic studies.**
+**This website presents selected projects and technical notes developed throughout my academic studies.**
 
 [Explore Projects](projects.qmd){.btn .btn-primary}
 
@@ -43,25 +43,14 @@ Coursework:
 
 ## Featured Projects {#featured-projects}
 
-### Modern Portfolio Theory
+### AI-Powered S&P 500 Constituent Change Monitor
 
-Implementation of mean-variance portfolio optimization using Python.
+An AI-driven cloud pipeline that automatically monitors index announcements, extracts S&P 500 constituent changes, and stores structured records for downstream analysis.
 
-The project includes:
+[View this project →](projects/AI-SP500-Constituent-Change-Monitor.qmd)
 
-- Mathematical formulation of portfolio risk and return
-- Covariance-matrix analysis
-- Python implementation
-- Interpretation of model results
-- Discussion of model limitations
 
-[View this project →](projects/portfolio-optimization.qmd)
-
-### Option Pricing
-
-A mathematical and computational study of option-pricing models.
-
-*Project coming soon.*
+*Featured Project coming soon.*
 
 ## Mathematical Notes
 

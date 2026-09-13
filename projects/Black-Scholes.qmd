@@ -1,23 +1,25 @@
 ---
-title: "Black–Scholes-Merton Option Pricing"
-description: "Mathematical derivation and Python implementation of the Black–Scholes-Merton model."
+title: "Black–Scholes–Merton Pricing and Option Strategy Greeks"
+description: "Derivation of the Black–Scholes–Merton pricing model and analysis of time-dependent Greek exposures across option strategies."
 date: 2026-08-16
 categories:
   - Python
-  - Quantitative Finance
   - Option Pricing
+  - Options Greeks
+  - Option Strategies
 ---
 
 ## Overview
 
-This project aims to derive the Black–Scholes formula for pricing European call options and implement it in Python.
+The project derives the risk-neutral distribution of the terminal stock price and uses it to obtain the closed-form pricing formulas for European options. It then examines the time-dependent behaviour of Delta, Gamma, Vega, Theta and Rho under the model.
+
+Building on these theoretical results, the project uses Python to analyse how the aggregate Greek exposures of selected multi-leg option strategies evolve as the underlying asset price and time to maturity change. The analysis connects option-pricing theory with practical strategy construction, visualization and risk management.
 
 ## Research Question
 
-How can the theoretical value of a European call option be calculated
-using the Black–Scholes framework?
+How can the Black–Scholes–Merton framework be used to price European options and analyse the changing Greek exposures of multi-leg option strategies?
 
-## Mathematical Model
+## Black–Scholes–Merton Framework
 
 In the setting of Black–Scholes-Merton Model, the price of a stock $S_t$ follows
 
@@ -25,7 +27,7 @@ $$
 \frac{dS_t}{S_t} = \mu dt + \sigma dW_t
 $$
 
-Under the risk-neutral measure, $\mu = r$ and
+Under the risk-neutral measure, $\mu = r$ and call option price is given by
 
 $$
 C=e^{-rT}\mathbb{E}_{\mathbb{Q}}[(S_T-K)^+]
@@ -140,14 +142,14 @@ P=Ke^{-rT}N(-d_2)-S_0N(-d_1)
 }
 $$
 
-## Greeks
+## Time-Dependent Greeks
 According to the Black-Scholes model, the value of a European call option at time \(t\) is
 
 $$
 C(S,t) = S N(d_1) - K e^{-r(T-t)} N(d_2)
 $$
 
-where $d_1 =\frac{\ln(S_0/K)+(r+\frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}},$ and $d_2=d_1-\sigma\sqrt{T-t}.$
+where $d_1 =\frac{\ln(S/K)+(r+\frac{1}{2}\sigma^2)(T-t)}{\sigma\sqrt{T-t}},$ and $d_2=d_1-\sigma\sqrt{T-t}.$
 
 
 ### Delta: 
@@ -165,22 +167,17 @@ $$\frac{\partial C}{\partial t} = -\frac{S N'(d_1) \sigma}{2 \sqrt{T-t}} - r K e
 ### Rho: 
 $$\frac{\partial C}{\partial r} = K (T-t) e^{-r(T-t)} N(d_2) \geq 0$$
 
-## Python Implementation
+## Greeks Dynamics Across Option Strategies
 
 to be continued...
 
-## Results
+## Assumptions
 
-The mo**l produces a theoretical option v**ue based on the current
-asset pri**, strike price, time to maturity,**nterest rate and volatility.
-
-## **mitations
-
-- The model assumes co**tant volatility.
-- The model assu**s a constant risk-free interest r**e.
-- Transaction costs are exclud**.
-- The underlying asset price is**ssumed to follow geometric Browni** motion.
+- The model assumes constant volatility.
+- The model assumes a constant risk-free interest rate.
+- Transaction costs are excluded.
+- The underlying asset price is assumed to follow geometric Brownian motion.
 
 ## Repository
 
-The comp**te implementation will be availab** on GitHub.
+The complete implementation will be available on GitHub.

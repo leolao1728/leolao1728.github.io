@@ -1,7 +1,9 @@
 ---
 title: "Projects"
 listing:
-  contents: projects
+  contents:
+    - projects/AI-SP500-Constituent-Change-Monitor.qmd
+    - projects/Black-Scholes.qmd
   sort: "date desc"
   type: default
   categories: true
@@ -10,4 +12,4 @@ listing:
 page-layout: full
 ---
 
-This page contains selected mathematics, Python and data-analysis projects.
+This page presents selected quantitative finance, automation and data-analysis projects.
