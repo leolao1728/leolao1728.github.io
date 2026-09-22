@@ -168,6 +168,50 @@ $$\frac{\partial C}{\partial t} = -\frac{S N'(d_1) \sigma}{2 \sqrt{T-t}} - r K e
 $$\frac{\partial C}{\partial r} = K (T-t) e^{-r(T-t)} N(d_2) \geq 0$$
 
 ## Greeks Dynamics Across Option Strategies
+In this section, we explore how the aggregate Greek exposures of selected multi-leg option strategies evolve as the underlying asset price and time to maturity change. The analysis is conducted using Python, leveraging libraries such as NumPy, SciPy, and Matplotlib for numerical computations and visualizations.
+
+### Simulation of Stock Price 
+As stock price $S_t$ follows geometric Brownian motion, we simulate its evolution over time using the following equation:
+$$
+S_{t+\Delta t} = S_t \exp\left( (\mu - \frac{1}{2} \sigma^2) \Delta t + \sigma \sqrt{\Delta t} Z_{t+\Delta t} \right)
+$$
+
+where $Z_t \sim \mathcal{N}(0,1)$ and $\Delta t = T/n$ for some positive integer $n$.
+
+$$
+\Rightarrow S_{k \Delta t} = S_0 \exp\left( (\mu - \frac{1}{2} \sigma^2) k \Delta t + \sigma \sqrt{\Delta t} \sum_{i=1}^k Z_i \right)
+$$
+
+<details>
+<summary><strong>Click to see derivation of the equation</strong></summary>
+
+Using Ito's lemma on $f(S_t)=\ln S_t$,
+
+$$
+df=\frac1{S_t}dS_t-\frac12\frac1{S_t^2}(dS_t)^2 =\frac1{S_t}dS_t-\frac12\frac1{S_t^2}S_t^2 \sigma^2 dt  = \frac1{S_t}dS_t-\frac12\sigma^2dt
+$$
+
+Integrating from $s$ to $s+\Delta s$,
+
+$$
+\ln(S_{s+\Delta s})-\ln(S_s)+\frac12\sigma^2\Delta s=r\Delta s+\sigma W_{s+\Delta s}-W_s
+$$
+
+Hence,
+
+$$
+S_{s+\Delta s} = S_s \exp\left( (\mu - \frac{1}{2} \sigma^2) \Delta s + \sigma \mathcal{N}(0,\Delta s) \right)
+$$
+
+let $\mathcal{N}(0,\Delta s) = \sqrt{\Delta s} Z_s$, where $Z_s \sim \mathcal{N}(0,1)$, and let $t=s$, we have
+
+$$
+S_{t+\Delta t} = S_t \exp\left( (\mu - \frac{1}{2} \sigma^2) \Delta t + \sigma \sqrt{\Delta t} Z_t \right)
+$$
+
+</details>
+
+
 
 to be continued...
 
