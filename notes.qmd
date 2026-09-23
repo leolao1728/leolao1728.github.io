@@ -1,5 +1,6 @@
 ---
 title: "Mathematical Notes"
+body-classes: projects-page
 ---
 
 This section contains selected mathematical derivations and study notes.

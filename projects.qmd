@@ -10,6 +10,7 @@ listing:
   sort-ui: false
   filter-ui: true
 page-layout: full
+body-classes: projects-page
 ---
 
 This page presents selected quantitative finance, automation and data-analysis projects.

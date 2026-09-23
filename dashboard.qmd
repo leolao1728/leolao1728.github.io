@@ -1,5 +1,6 @@
 ---
 title: "Dashboards"
+body-classes: projects-page
 ---
 
 This section presents interactive visualizations associated with my projects.

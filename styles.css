@@ -3,7 +3,7 @@
   max-width: 1400px;
 }
 
-/* Headings */
+/* General headings */
 h1,
 h2,
 h3 {
@@ -25,10 +25,17 @@ a:hover {
 }
 
 /* Homepage title */
-.quarto-title-block .title {
+.homepage .quarto-title-block .title {
   font-size: 4rem;
   font-weight: 700;
   line-height: 1.1;
+}
+
+/* Homepage subtitle */
+.homepage .quarto-title-block .subtitle {
+  font-size: 1.35rem;
+  margin-top: 0.75rem;
+  color: #5f6b76;
 }
 
 /* Homepage second-level headings */
@@ -38,4 +45,38 @@ a:hover {
   border-bottom: 2px solid #dbeafe;
   padding-bottom: 0.4rem;
   margin-top: 2.5rem;
+}
+
+/* Projects listing page title */
+.projects-page .quarto-title-block .title {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Individual project page title */
+.project-page .quarto-title-block .title {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .homepage .quarto-title-block .title {
+    font-size: 2.7rem;
+  }
+
+  .homepage .quarto-title-block .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .projects-page .quarto-title-block .title {
+    font-size: 2.4rem;
+  }
+
+  .project-page .quarto-title-block .title {
+    font-size: 2.3rem;
+    line-height: 1.2;
+  }
 }
