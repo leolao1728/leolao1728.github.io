@@ -47,7 +47,7 @@ Coursework:
 
 An AI-driven cloud pipeline that automatically monitors index announcements, extracts S&P 500 constituent changes, and stores structured records for downstream analysis.
 
-[View this project →](projects/AI-SP500-Constituent-Change-Monitor.qmd)
+[View this project →](projects/AI-SP500-Constituent-Change-Monitor/index.qmd)
 
 
 *Featured Project coming soon.*

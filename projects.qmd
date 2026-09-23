@@ -2,8 +2,8 @@
 title: "Projects"
 listing:
   contents:
-    - projects/AI-SP500-Constituent-Change-Monitor.qmd
-    - projects/Black-Scholes.qmd
+    - projects/AI-SP500-Constituent-Change-Monitor/index.qmd
+    - projects/Black-Scholes/index.qmd
   sort: "date desc"
   type: default
   categories: true
